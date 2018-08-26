@@ -168,6 +168,16 @@ public class AddressBook {
      */
     private static final Scanner SCANNER = new Scanner(System.in);
 
+    /*If we use hashmap to represent a person, then we need keys to represent the person's properties. This
+     * replaces the indexes above.
+     * */
+    private enum PersonProperty {NAME, EMAIL, PHONE};
+
+    /*
+     * The variable person resembles a json with fields: name, phone and email.
+     * */
+    private static final HashMap<PersonProperty, String> person = new HashMap<>();
+
     /*
      * NOTE : =============================================================================================
      * Note that the type of the variable below can also be declared as List<String[]>, as follows:
@@ -181,7 +191,7 @@ public class AddressBook {
     /**
      * List of all persons in the address book.
      */
-    private static final ArrayList<String[]> ALL_PERSONS = new ArrayList<>();
+    private static final ArrayList<HashMap<PersonProperty, String>> ALL_PERSONS = new ArrayList<>();
 
     /**
      * Stores the most recent list of persons shown to the user as a result of a user command.
